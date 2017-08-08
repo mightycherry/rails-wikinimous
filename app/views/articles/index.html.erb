@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>ARTICLES</h1>
+    <% @articles.each do |article| %>
+    <div class="article">
+    <div class="title">
+      <h2><%= article.title %></h2>
+    </div>
+    <div class="content">
+      <h3><%= article.content %></h3>
+    </div>
+    </br>
+    <%= link_to "view", article_path(article) %>
+    <%= link_to "edit", edit_article_path(article) %>
+    <%= link_to "Delete", article_path(article),
+    method: :delete,
+    data: { confirm: "Are you sure?" } %>
+    <% end %>
+  </div>
+</div>
